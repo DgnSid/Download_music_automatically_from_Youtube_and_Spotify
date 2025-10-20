@@ -188,4 +188,5 @@ MIT License
 **Sid DEGUENON**
 
 [🔗 View my GitHub](https://github.com/DgnSid)
+[🔗 EMail](deguenonsid@gmail.com)
 
