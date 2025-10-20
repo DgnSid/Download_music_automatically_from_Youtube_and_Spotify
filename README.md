@@ -1,104 +1,191 @@
-# Download_music_automatically_from_Youtube_and_Spotify
-Un script python qui vous permet de télécharger automatiquement vos musiques préférés depuis Youtube et Spotify
-Voici la documentation GitHub en markdown pour votre projet :
+# I. Download Musics Automatically from YouTube and Spotify and rename all of them
 
-# Spotify Music Downloader 🎵
+A Python script that allows you to automatically download your favorite music from YouTube and Spotify.
 
-Un script Python automatisé pour télécharger de la musique à partir de playlists Spotify en utilisant YouTube comme source.
+# Spotify Music Downloader 🎵 (File download.py )
 
-## ✨ Fonctionnalités
+An automated Python script to download music from Spotify playlists using YouTube as the source.
 
-- 📥 Téléchargement automatique de playlists Spotify complètes
-- 🎧 Conversion en fichiers MP3 de qualité
-- 🔍 Recherche intelligente sur YouTube
-- 🎯 Interface menu interactive
-- 📁 Gestion des métadonnées audio
-- 🔄 Support multiple : playlists, singles, listes personnalisées
+## ✨ Features
 
-## 🛠️ Technologies Utilisées
+- 📥 Automatic download of complete Spotify playlists
+- 🎧 Conversion to quality MP3 files
+- 🔍 Smart YouTube search
+- 🎯 Interactive menu interface
+- 📁 Audio metadata management
+- 🔄 Multiple support: playlists, singles, custom lists
 
-### Bibliothèques Python
-- **`yt-dlp`** - Téléchargement et extraction audio depuis YouTube
-- **`spotipy`** - Interface avec l'API Spotify officielle
-- **`youtube-search-python`** - Recherche de vidéos sur YouTube
-- **`FFmpeg`** - Conversion et traitement audio
+## 🛠️ Technologies Used
 
-### APIs et Services
-- **Spotify Web API** - Récupération des métadonnées musicales
-- **YouTube** - Source des fichiers audio
+### Python Libraries
+- **`yt-dlp`** - Download and audio extraction from YouTube
+- **`spotipy`** - Interface with official Spotify API
+- **`youtube-search-python`** - YouTube video search
+- **`FFmpeg`** - Audio conversion and processing
+
+### APIs and Services
+- **Spotify Web API** - Music metadata retrieval
+- **YouTube** - Audio file source
 
 ## 📦 Installation
 
-### Prérequis
+### Prerequisites
 - Python 3.7+
-- FFmpeg installé sur le système
-- Compte développeur Spotify
+- FFmpeg installed on the system
+- Spotify developer account
 
-### Installation des dépendances
+### Installing Dependencies
 ```bash
 pip install yt-dlp spotipy youtube-search-python
 ```
 
-### Configuration Spotify
-1. Créer une application sur [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
-2. Récupérer le `CLIENT_ID` et `CLIENT_SECRET`
-3. Configurer les variables d'environnement :
+### Spotify Configuration
+1. Create an application on [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Retrieve `CLIENT_ID` and `CLIENT_SECRET`
+3. Configure environment variables:
 ```bash
-export SPOTIFY_CLIENT_ID="votre_client_id"
-export SPOTIFY_CLIENT_SECRET="votre_client_secret"
+export SPOTIFY_CLIENT_ID="your_client_id"
+export SPOTIFY_CLIENT_SECRET="your_client_secret"
 ```
 
-## 🚀 Utilisation
+## 🚀 Usage
 
 ```bash
 python3 download.py
 ```
 
-### Options du menu :
-1. **Télécharger depuis une playlist Spotify**
-2. **Télécharger depuis une playlist YouTube**
-3. **Télécharger depuis une liste de chansons**
-4. **Télécharger une chanson (recherche)**
-5. **Télécharger une chanson (lien direct)**
-6. **Aide**
+### Menu Options:
+1. **Download from Spotify playlist**
+2. **Download from YouTube playlist**
+3. **Download from song list**
+4. **Download a single song (search)**
+5. **Download a single song (direct link)**
+6. **Help**
 
-## 🎯 Fonctionnement
+## 🎯 How It Works
 
-Le script fonctionne en 3 étapes :
+The script works in 3 steps:
 
-1. **Récupération des métadonnées** via l'API Spotify
-2. **Recherche automatique** sur YouTube des correspondances
-3. **Téléchargement et conversion** en MP3 avec métadonnées
+1. **Metadata retrieval** via Spotify API
+2. **Automatic search** for matches on YouTube
+3. **Download and conversion** to MP3 with metadata
 
 ## ⚠️ Important
 
-- Usage strictement personnel uniquement
-- Respectez les droits d'auteur
-- Les credentials Spotify ne doivent pas être partagés
-- Régénérez vos clés API si compromises
+- Strictly personal use only
+- Respect copyright laws
+- Spotify credentials should not be shared
+- Regenerate API keys if compromised
 
-## 📝 Structure du Projet
+## 🐛 Troubleshooting
 
-```
-spotify-downloader/
-├── download.py          # Script principal
-├── requirements.txt     # Dépendances Python
-└── README.md           # Documentation
-```
-
-## 🐛 Résolution de Problèmes
-
-### Erreur d'import
+### Import Error
 ```bash
 pip install --upgrade yt-dlp spotipy
 ```
 
-### Problème audio
-Vérifiez que FFmpeg est installé et accessible dans le PATH.
+### Audio Issues
+Verify that FFmpeg is installed and accessible in PATH.
 
-## 👨‍💻 Auteur
+
+# II. Audio File Renamer (File compte.py )
+
+A simple Python script to rename all audio files in a directory sequentially from 1 to N.
+
+## Features
+
+- Renames audio files in numerical order (1.mp3, 2.wav, 3.flac, etc.)
+- Supports multiple audio formats (MP3, WAV, FLAC, AAC, OGG, M4A, WMA)
+- Simple and interactive versions available
+- Optional prefix for renamed files
+- Safe operation with confirmation prompt
+
+## Usage
+
+### Basic Version
+
+```python
+# Modify the directory path and run the script
+chemin_dossier = "/path/to/your/audio/folder"
+renommer_fichiers_audio(chemin_dossier)
+```
+
+### Interactive Version
+
+```python
+# Run the script and follow the prompts
+python audio_renamer.py
+```
+
+The script will:
+1. Ask for the directory path (default: current directory)
+2. Ask for an optional prefix
+3. Show the files that will be renamed
+4. Ask for confirmation before proceeding
+
+## Supported Formats
+
+- MP3 (`.mp3`)
+- WAV (`.wav`) 
+- FLAC (`.flac`)
+- AAC (`.aac`)
+- OGG (`.ogg`)
+- M4A (`.m4a`)
+- WMA (`.wma`)
+
+## Example
+
+**Before:**
+```
+song1.mp3
+recording.wav
+audio_file.flac
+podcast.m4a
+```
+
+**After:**
+```
+1.mp3
+2.wav
+3.flac
+4.m4a
+```
+
+**With prefix "audio_":**
+```
+audio_1.mp3
+audio_2.wav
+audio_3.flac
+audio_4.m4a
+```
+
+## Requirements
+
+- Python 3.x
+- No external dependencies
+
+## Installation
+
+1. Clone or download the script
+2. Navigate to the directory containing your audio files
+3. Run the script:
+
+```bash
+python audio_renamer.py
+```
+
+## Warning
+
+⚠️ **Always backup your files** before running this script, as the renaming operation cannot be easily undone.
+
+## License
+
+MIT License
+
+
+## 👨‍💻 Author
 
 **Sid DEGUENON**
 
-[🔗 Voir mon GitHub](https://github.com/DgnSid)
+[🔗 View my GitHub](https://github.com/DgnSid)
 
