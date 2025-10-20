@@ -20,9 +20,9 @@ ydl_opts = {
     }],
 }
 
-# ⚠️ METTRE EN VARIABLES D'ENVIRONNEMENT OU DANS UN FICHIER SÉPARÉ
-CLIENT_ID = "8bf0a451a99140709ff4b99b58681842"
-CLIENT_SECRET = "e444cece9e854f9baf77ca165e3180e9"
+# AUTH -- Create a spotify developper account and get CLIENT_ID and CLIENT_SECRET
+CLIENT_ID = "YOUR_CLIENT_ID"
+CLIENT_SECRET = "YOUR_CLIENT_SECRET"
 
 songs = [] # list of songs from spotify playlist
 urls = []  # yt links of all the songs from the urls array
